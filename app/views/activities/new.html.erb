@@ -1,0 +1,13 @@
+<%= form_for @activity do |f| %>
+    <%= f.label :name, 'Activity Name:' %>
+    <%= f.text_field :name %>
+    
+    <%= f.label :description, 'Activity Description' %>
+    <%= f.text_area :description %>
+
+    <%= f.label :location, 'Activity Location' %>
+    <%= f.select :location, options_for_select([["Select A Zone", ""], "Denver Metro", "Pikes Peak", "Boulder Valley", "Colorado Springs", "Long's Peak", "Northeast Colorado", "Morgan/Washington Bi-County", "East Central Colorado", "Southeast Colorado", "Arkansas Valley", "Southern Colorado", "San Luis Valley", "San Juan Basin", "Western Colorado", "Other"]), :class => 'genForm_dropBox' %>
+
+    <%= f.submit %>
+    <%end%>
+

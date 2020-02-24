@@ -1,0 +1,8 @@
+<% @activities.each do |a| %>
+    <%= a.name %><br>
+    <%= a.description %><br>
+    <%= a.location %> <br>
+    <br>
+    <%end%>
+
+<%= link_to "Add an activity", new_activity_path %>
