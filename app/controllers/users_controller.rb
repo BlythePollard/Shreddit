@@ -20,6 +20,7 @@ class UsersController < ApplicationController
 
 
     def index
+        #custom route to /users/activities.hmtl.erb
     end
 
     private

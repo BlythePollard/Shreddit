@@ -9,6 +9,7 @@ class ActivitiesController < ApplicationController
     end
 
     def edit
+        #check user logged in
         @activity = Activity.find(params[:id])
     end
 
@@ -20,10 +21,12 @@ class ActivitiesController < ApplicationController
     end
 
     def show
+        #check user logged in
         @activity = Activity.find(params[:id])
     end
 
     def index
+        #check user logged in
         @activities = Activity.all
         @user = User.find(session[:user_id])
     end
