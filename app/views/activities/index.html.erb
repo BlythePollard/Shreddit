@@ -1,8 +1,11 @@
 <% @activities.each do |a| %>
-    <%= a.name %><br>
-    <%= a.description %><br>
-    <%= a.location %> <br>
+    <h3><%= a.name %><br></h3>
+    <p><%= a.description %></p>
+    <p><%= a.location %> <br></p>
+    <p><%= link_to "Edit or delete activity", edit_activity_path(a)%></p>
     <br>
     <%end%>
 
 <%= link_to "Add an activity", new_activity_path %>
+<%= link_to "Home", user_path(@user) %>
+

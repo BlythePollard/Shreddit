@@ -1,0 +1,6 @@
+<h1><%= @activity.name %></h1>
+<p><%= @activity.description %></p>
+<p><%= @activity.location %></p>
+
+<%= link_to "My Activities", user_activities_path(@activity) %>
+<%= link_to "All Activities", activities_path %>

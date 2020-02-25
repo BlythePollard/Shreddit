@@ -8,17 +8,27 @@ class SessionsController < ApplicationController
         elsif params[:password].nil? || params[:password] == ""
             redirect_to '/sessions/new'
         else 
-            @user = User.find(user_params)
-            session[:user_id] = @user.id
-            redirect_to user_path(@user.id)
+            @user = User.find_by(name: params[:name])
+            #not saving name & password into database!
+            binding.pry
+            if @user = @user.authenticate(params[:password])
+                session[:user_id] = @user.id
+                redirect_to user_path(@user.id)
+            else 
+                redirect_to '/'
+            end
         end
     end
 
     def destroy
+        User.find(session[:user_id]).destroy      
+        session[:user_id] = nil         
+        redirect_to '/' 
     end
 
     private
 
     def user_params
+        params.require(:user).permit(:name, :password)
     end
 end
