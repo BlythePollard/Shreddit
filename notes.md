@@ -1,12 +1,14 @@
 To do
 
-Fix user/:id/activity page to show index of ONLY user's activities
+X Fix user/:id/activity page to show index of ONLY user's activities
+---BUT had to create custom route- does it still satisfy requirements?
 
 Scoping
 
-Validations for creating new activity
-
-Layout
+X Validations for creating new activity
 
 OAUTH
 
+X User_logged_in to prevent views if not logged in
+
+How to use boostrap for layout???
