@@ -20,7 +20,10 @@ class UsersController < ApplicationController
 
 
     def index
-        #custom route to /users/activities.hmtl.erb
+        #issue: activities index and this index are both going to '/activities/index'
+        @user = User.find(session[:user_id])
+        render '/users/activities'
+        #custom route to /users/activities.hmtl.erb OR INDEX - see notes in g docs
     end
 
     private

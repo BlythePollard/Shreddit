@@ -29,6 +29,7 @@ class ActivitiesController < ApplicationController
         #check user logged in
         @activities = Activity.all
         @user = User.find(session[:user_id])
+        #binding.pry
     end
 
     def location

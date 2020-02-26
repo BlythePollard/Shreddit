@@ -3,9 +3,7 @@ Rails.application.routes.draw do
     resources :activities
   end
 
-  resources :activities do 
-    resources :users
-  end
+  resources :activities 
 
   resources :sessions 
   

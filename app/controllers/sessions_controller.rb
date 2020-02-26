@@ -3,14 +3,7 @@ class SessionsController < ApplicationController
     end
 
     def create
-        if params[:name].nil? || params[:name] == ""
-            redirect_to '/sessions/new'
-        elsif params[:password].nil? || params[:password] == ""
-            redirect_to '/sessions/new'
-        else 
             @user = User.find_by(name: params[:name])
-            #not saving name & password into database!
-            binding.pry
             if @user = @user.authenticate(params[:password])
                 session[:user_id] = @user.id
                 redirect_to user_path(@user.id)
