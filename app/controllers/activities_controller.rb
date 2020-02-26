@@ -5,6 +5,8 @@ class ActivitiesController < ApplicationController
 
     def create
         @activity = Activity.create(activity_params)
+        @user = User.find(session[:user_id])
+        @user.activities << @activity
         redirect_to activities_path
     end
 

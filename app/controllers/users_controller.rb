@@ -19,11 +19,11 @@ class UsersController < ApplicationController
     end
 
 
-    def index
-        #issue: activities index and this index are both going to '/activities/index'
+    def activities
         @user = User.find(session[:user_id])
         render '/users/activities'
-        #custom route to /users/activities.hmtl.erb OR INDEX - see notes in g docs
+
+        #issue: activities are not getting related to user- join table not working!
     end
 
     private

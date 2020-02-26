@@ -1,1 +1,14 @@
-this is the user-specific activities page
+<h1><%= @user.name %>'s Activities</h1>
+
+<% @user.activities.each do |a| %>
+    <h3><%= a.name %></h3>
+    <p><%= a.description %></p>
+    <p><%= a.location %></p>
+    <p><%= link_to "Edit or delete activity", edit_activity_path(a)%></p>
+    <br>
+    <%end%>
+
+<%= link_to "Add an activity", new_activity_path %><br>
+<%= link_to "Home", user_path(@user) %><br>
+<%= link_to "View All Activities", activities_path %>
+
