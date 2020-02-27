@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :sessions 
 
+  get '/auth/github/callback', to: 'sessions#create'
+
   get '/user/activities' => 'users#activities'
   
   root 'application#home'

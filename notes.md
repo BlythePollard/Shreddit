@@ -7,7 +7,8 @@ Scoping
 
 X Validations for creating new activity
 
-OAUTH
+X OAUTH
+---NOTE: did not hide key and secret in ENV hash because wasn't covered in video- necessary?
 
 X User_logged_in to prevent views if not logged in
 
