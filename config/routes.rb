@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     resources :activities
   end
 
+  get '/activities/top_ten' => 'activities#top_ten'
+
   resources :activities 
 
   resources :sessions 

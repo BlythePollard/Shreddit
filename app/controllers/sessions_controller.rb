@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
     def create
         if auth_hash = request.env["omniauth.auth"]
             user = User.from_omniauth(auth_hash)
+            binding.pry
             #AUTH_HASH coming through, but email is nil....
             session[:user_id] = user.id
             redirect_to user_path(user.id)
