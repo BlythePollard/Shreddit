@@ -44,6 +44,11 @@ class ActivitiesController < ApplicationController
         redirect_to activities_url
     end
 
+    def top_ten
+        @activities = Activity.all
+        render '/activities/top_ten'
+    end
+
     private
 
     def activity_params

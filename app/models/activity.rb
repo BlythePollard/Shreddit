@@ -5,4 +5,7 @@ class Activity < ApplicationRecord
     #accepts_nested_attributes_for :user_activities, :users
 
     #valiations here!
+
+    scope :top_ten, -> {order(created_at: :desc).limit(10)
+
 end
