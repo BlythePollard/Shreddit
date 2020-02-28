@@ -2,6 +2,14 @@
 <p><%= @activity.description %></p>
 <p><%= @activity.location %></p>
 <p><%= @activity.user_activities.pluck(:created_at)[0].strftime("%m-%d-%Y") %></p>
+<%= link_to upvote_activity_path(@activity), method: :put do %>
+    Like
+    <%=@activity.get_upvotes.size %>
+    <%end%>
+<%= link_to downvote_activity_path(@activity), method: :put do %>
+    Unlike
+    <%= @activity.get_downvotes.size %>
+    <%end%>   
 
 <%= link_to "My Activities", user_activities_path(@activity) %>
 <%= link_to "All Activities", activities_path %>

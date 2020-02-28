@@ -5,7 +5,13 @@ Rails.application.routes.draw do
 
   get '/activities/top_ten' => 'activities#top_ten'
 
-  resources :activities 
+  resources :activities do
+    member do 
+      put 'upvote' => 'activities#upvote'
+      put 'downvote' => 'activities#downvote'
+    end
+  end
+
 
   resources :sessions 
 

@@ -49,6 +49,16 @@ class ActivitiesController < ApplicationController
         render '/activities/top_ten'
     end
 
+    def upvote
+        @activity = Activity.find(params[:id])
+        @activity.upvote_from current_user
+    end
+
+    def downvote
+        @activity = Activity.find(params[:id])
+        @activity.downvote_from current_user
+    end
+
     private
 
     def activity_params
