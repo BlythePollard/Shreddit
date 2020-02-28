@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     member do 
       put 'like' => 'activities#upvote'
       put 'unlike' => 'activities#downvote'
+      #get ':location' => 'activities#location' something like this for location route?
     end
   end
 
@@ -27,6 +28,7 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
 
   get '/activities/*location' => 'activities#location'
+  #this is routing to show rather than location--why?!
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

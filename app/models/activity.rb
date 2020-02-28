@@ -4,10 +4,14 @@ class Activity < ApplicationRecord
 
     acts_as_votable
 
+    validates :name, presence: true
+    validates :name, uniqueness: true
+    validates :description, presence:true
+    validates :location, presence: true
+
     #accepts_nested_attributes_for :user_activities, :users
 
-    #valiations here!
-
     scope :top_ten, -> {order(:cached_weighted_average => :desc).limit(10)}
+    #this scope order is not working properly!
 
 end
