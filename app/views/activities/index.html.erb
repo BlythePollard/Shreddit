@@ -2,6 +2,7 @@
     <h3><%= a.name %><br></h3>
     <p><%= a.description %></p>
     <p><%= a.location %> <br></p>
+    <p>Created: <%=  a.user_activities.pluck(:created_at)[0].strftime("%m-%d-%Y") %></p>
     <p><%= link_to "Edit or delete activity", edit_activity_path(a)%></p>
     <br>
     <%end%>

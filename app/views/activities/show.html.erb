@@ -1,6 +1,7 @@
 <h1><%= @activity.name %></h1>
 <p><%= @activity.description %></p>
 <p><%= @activity.location %></p>
+<p><%= @activity.user_activities.pluck(:created_at)[0].strftime("%m-%d-%Y") %></p>
 
 <%= link_to "My Activities", user_activities_path(@activity) %>
 <%= link_to "All Activities", activities_path %>
