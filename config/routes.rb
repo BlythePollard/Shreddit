@@ -7,11 +7,10 @@ Rails.application.routes.draw do
 
   resources :activities do
     member do 
-      put 'upvote' => 'activities#upvote'
-      put 'downvote' => 'activities#downvote'
+      put 'like' => 'activities#upvote'
+      put 'unlike' => 'activities#downvote'
     end
   end
-
 
   resources :sessions 
 
