@@ -8,6 +8,6 @@ class Activity < ApplicationRecord
 
     #valiations here!
 
-    scope :top_ten, -> {order(created_at: :desc).limit(10)}
+    scope :top_ten, -> {order(:cached_weighted_average => :desc).limit(10)}
 
 end
