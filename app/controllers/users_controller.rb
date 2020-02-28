@@ -23,7 +23,6 @@ class UsersController < ApplicationController
     def activities
         @user = User.find(session[:user_id])
         render '/users/activities'
-
         #issue: activities are not getting related to user- join table not working!
     end
 

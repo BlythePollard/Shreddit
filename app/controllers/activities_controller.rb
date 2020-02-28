@@ -6,7 +6,6 @@ class ActivitiesController < ApplicationController
     end
 
     def create
-       raise params.inspect
         @activity = Activity.create(activity_params)
         @user = User.find(session[:user_id])
         @user.activities << @activity
@@ -36,6 +35,8 @@ class ActivitiesController < ApplicationController
         @user = User.find(session[:user_id])
         #binding.pry
     end
+
+    
 
     def location
         raise params.inspect
