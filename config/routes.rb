@@ -27,7 +27,10 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
 
-  get '/activities/*location' => 'activities#location'
+  get '/activities/:location' => 'activities#location'
+  #order matters- make sure something else doesn't trump it
+  #parameterized routes
+
   #this is routing to show rather than location--why?!
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

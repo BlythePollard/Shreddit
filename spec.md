@@ -1,3 +1,15 @@
+New Notrs:
+
+Vote
+likes (increment with each like) - controller action to update database - 
+user_id
+activity_id
+
+Dynamic route matching:
+Route with parameter input - link “view activities by location” + drop-down option select + “go”
+
+
+
 Specs:
 
  X Using Ruby on Rails for the project
