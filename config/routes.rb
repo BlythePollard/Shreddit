@@ -1,9 +1,11 @@
 Rails.application.routes.draw do    
+
   resources :users do 
     resources :activities
     resources :votes
   end
 
+  post '/activities/:location' => 'activities#location'
   get '/activities/top_ten' => 'activities#top_ten'
 
   resources :activities do
@@ -25,7 +27,6 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
 
-  get '/activities/:location' => 'activities#location'
   #order matters- make sure something else doesn't trump it
   #parameterized routes
 

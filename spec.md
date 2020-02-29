@@ -1,12 +1,16 @@
-New Notes:
+TO DO
+ 1) dynamic route for locations
+        -set up location select from page
+ 2) figure out how to do a top ten list
+ 3) enforce if_logged_in before_actions for necessary controller actions
+ 4) clean up user journey- what makes sense, what looks good, what doesn't?
 
-Vote
-likes (increment with each like) - controller action to update database - 
-user_id
-activity_id
+New Notes:
 
 Dynamic route matching:
 Route with parameter input - link “view activities by location” + drop-down option select + “go”
+-----> how to do this in user show page? Need @activity for form_for, but can't get. 
+- could make user home page the users/activities view page- might make easier to do this capability
 
 
 
@@ -22,10 +26,10 @@ Specs:
 
  X Include at least one many-to-many relationship (x has_many y through z, y has_many x through z; e.g. Recipe has_many Items through Ingredients, Item has_many Recipes through Ingredients)
 
+ X- LIKES 
  The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (attribute_name e.g. ingredients.quantity)
 
- Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
- -----> still have to add validations for activities
+ X Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
 
  X Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
 
@@ -40,6 +44,7 @@ Specs:
             ---do i have this for sure? THIS ONE IS HARD
 
 Include form display of validation errors (form URL e.g. /recipes/new)
+-----> this still has error
 
 Confirm:
 

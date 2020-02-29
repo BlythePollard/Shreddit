@@ -37,7 +37,7 @@ class ActivitiesController < ApplicationController
     end
 
     def location
-        raise params.inspect
+        
     end
 
     def destroy
