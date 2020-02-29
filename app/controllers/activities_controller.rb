@@ -37,7 +37,7 @@ class ActivitiesController < ApplicationController
     end
 
     def location
-        
+        @activities = Activity.all.search_by_location(params[:location])
     end
 
     def destroy

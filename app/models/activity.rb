@@ -11,5 +11,8 @@ class Activity < ApplicationRecord
     #accepts_nested_attributes_for :user_activities, :users
 
     scope :top_ten, -> {order(created_at: :desc).limit(10)}
-    
+
+    def self.search_by_location(location)
+        Activity.where(location: location)
+    end
 end
