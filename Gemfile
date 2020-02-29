@@ -26,7 +26,6 @@ gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'omniauth'
 gem 'omniauth-github'
-gem 'acts_as_votable', '~> 0.10.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

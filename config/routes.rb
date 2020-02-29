@@ -1,6 +1,7 @@
 Rails.application.routes.draw do    
   resources :users do 
     resources :activities
+    resources :votes
   end
 
   get '/activities/top_ten' => 'activities#top_ten'
