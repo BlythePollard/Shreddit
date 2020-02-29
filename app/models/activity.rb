@@ -10,8 +10,6 @@ class Activity < ApplicationRecord
 
     #accepts_nested_attributes_for :user_activities, :users
 
-    scope :top_ten, -> {order(votes.pluck(:likes).count => :desc).limit(10)}
-    #top ten will take vote counts of ALL activities, order them descending
-    #need another method to iterate, get vote counts for each
-
+    scope :top_ten, -> {order(created_at: :desc).limit(10)}
+    
 end

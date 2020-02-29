@@ -1,9 +1,11 @@
 <h1>Most Recently Shared Activities</h1>
-<%= binding.pry %>
 <% @activities.top_ten.each do |a| %>
     <h3><%= a.name %><br></h3>
     <p><%= a.description %></p>
     <p>Location: <%= a.location %> <br></p>
-    <p>Shared <%=  a.user_activities.pluck(:created_at)[0].strftime("%m-%d-%Y") %></p>
     <br>
     <% end %>
+    <br>
+    
+
+    <%= link_to "Back to All Activities", activities_path %>
