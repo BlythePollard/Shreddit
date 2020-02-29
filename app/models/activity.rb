@@ -1,8 +1,7 @@
 class Activity < ApplicationRecord
     has_many :user_activities
     has_many :users, through: :user_activities
-
-    acts_as_votable
+    has_many :votes
 
     validates :name, presence: true
     validates :name, uniqueness: true

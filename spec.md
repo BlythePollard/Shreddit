@@ -1,4 +1,4 @@
-New Notrs:
+New Notes:
 
 Vote
 likes (increment with each like) - controller action to update database - 

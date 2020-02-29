@@ -1,10 +1,9 @@
 class User < ApplicationRecord
     has_secure_password 
 
-    acts_as_voter
-
     has_many :user_activities
     has_many :activities, through: :user_activities
+    has_many :votes
 
     validates :name, presence: true
     validates :password, presence:true

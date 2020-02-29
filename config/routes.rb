@@ -6,11 +6,8 @@ Rails.application.routes.draw do
   get '/activities/top_ten' => 'activities#top_ten'
 
   resources :activities do
-    member do 
-      put 'like' => 'activities#upvote'
-      put 'unlike' => 'activities#downvote'
+    resources :votes
       #get ':location' => 'activities#location' something like this for location route?
-    end
   end
 
   resources :sessions 
