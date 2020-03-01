@@ -1,12 +1,16 @@
 TO DO
- 1) dynamic route for locations
-        - X set up location select from page
-        - figure out how to grab activities by location to display on location page
- 2) X figure out how to do a top ten list
-        ---- just did scope and list for 10 most recent
- 3) enforce if_logged_in before_actions for necessary controller actions
+- dynamic route for locations
+        --- Now working, but dynamic URL is not! how to use parameterized location for URL?
+- incorrect login information leading to error page- nomethoderror for          nilclass        
+- enforce if_logged_in before_actions for necessary controller actions
     ----before_actions working, flash notice not working when rerouting to home page
- 4) clean up user journey- what makes sense, what looks good, what doesn't?
+- clean up user journey- what makes sense, what looks good, what doesn't?
+
+DONE
+- figure out how to do a top ten list
+        ---- just did scope and list for 10 most recent
+
+
 
 New Notes:
 

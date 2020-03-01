@@ -6,7 +6,7 @@
 
 <p><%= link_to "Add an activity", new_activity_path %></p>
 
-<p><%= link_to "View Your Activities", user_activities_path(@user)%></p>
+<p><%= link_to "View Your Activities", :controller => :users, :action => :activities%></p>
 
 <p><%= link_to "View All Activities", activities_path %></p>
 

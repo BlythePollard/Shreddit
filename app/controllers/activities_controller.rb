@@ -13,7 +13,6 @@ class ActivitiesController < ApplicationController
     end
 
     def edit
-        #check user logged in
         @activity = Activity.find(params[:id])
     end
 
@@ -25,7 +24,6 @@ class ActivitiesController < ApplicationController
     end
 
     def show
-        #check user logged in
         @activity = Activity.find(params[:id])
     end
 
@@ -50,6 +48,7 @@ class ActivitiesController < ApplicationController
     end
 
     def top_ten
+        @user = User.find(session[:user_id])
         @activities = Activity.all
         render '/activities/top_ten'
     end
