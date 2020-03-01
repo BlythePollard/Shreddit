@@ -12,12 +12,17 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id
             redirect_to user_path(user.id)
         else 
-            user = User.find_by(name: params[:name])
+            @user = User.find_by(name: params[:name])
+            #binding.pry
+
             if user && user.authenticate(params[:password])
                 session[:user_id] = user.id
                 redirect_to user_path(user.id)
             else 
-                render :new
+                binding.pry
+
+                flash[:notice] = "no luck"
+                redirect_to '/sessions/new' #flash only works with redirect_to
                 #flash message here
             end
         end
