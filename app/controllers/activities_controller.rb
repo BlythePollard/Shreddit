@@ -35,7 +35,13 @@ class ActivitiesController < ApplicationController
     end
 
     def location
-        @activities = Activity.all.search_by_location(params[:":location"])
+        @user = User.find(session[:user_id])
+        @activities = Activity.all.search_by_location(params[:":location"])   
+        if !@activities.empty?
+        else 
+            flash[:notice] = "There are no activities in this location yet."
+            redirect_to user_path(@user)
+        end
     end
 
     def destroy
