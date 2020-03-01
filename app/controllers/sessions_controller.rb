@@ -12,18 +12,16 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id
             redirect_to user_path(user.id)
         else 
+            # how to check validations too???
+            # @user = User.new(user_params)
+            # if @user.save
             @user = User.find_by(name: params[:name])
-            #binding.pry
-
             if user && user.authenticate(params[:password])
                 session[:user_id] = user.id
                 redirect_to user_path(user.id)
             else 
-                binding.pry
-
                 flash[:notice] = "no luck"
-                redirect_to '/sessions/new' #flash only works with redirect_to
-                #flash message here
+                redirect_to '/sessions/new'
             end
         end
     end
