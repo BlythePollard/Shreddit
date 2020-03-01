@@ -11,7 +11,7 @@
 <br>
 <%= form_tag('/activities/:location') do %>
     <label>View Activities by Location:</label><br>
-    <%= select_tag "location", raw("<option>Denver Metro</option><option>Pikes Peak</option><option>Boulder Valley</option><option>Colorado Springs</option><option>Long's Peak</option><option>Northeast Colorado</option><option>Morgan/Washington Bi-County</option><option>East Central Colorado</option>
+    <%= select_tag ":location", raw("<option>Denver Metro</option><option>Pikes Peak</option><option>Boulder Valley</option><option>Colorado Springs</option><option>Long's Peak</option><option>Northeast Colorado</option><option>Morgan/Washington Bi-County</option><option>East Central Colorado</option>
     <option>Southeast Colorado</option><option>Arkansas Valley</option><option>Southern Colorado</option><option>San Luis Valley</option><option>San Juan Basin</option><option>Western Colorado</option><option>Other</option>") %>
     <input type="submit" value="Search">
     <%end%>

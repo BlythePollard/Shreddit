@@ -13,6 +13,7 @@ class Activity < ApplicationRecord
     scope :top_ten, -> {order(created_at: :desc).limit(10)}
 
     def self.search_by_location(location)
+        #find all activities where activity.location.parameterize == location
         Activity.where(location: location)
     end
 end

@@ -1,5 +1,5 @@
 class ActivitiesController < ApplicationController
-    before_action :authenticate_user
+    before_action :require_login
     
     def new
         @activity = Activity.new
@@ -30,14 +30,12 @@ class ActivitiesController < ApplicationController
     end
 
     def index
-        #check user logged in
         @activities = Activity.all
         @user = User.find(session[:user_id])
-        #binding.pry
     end
 
     def location
-        @activities = Activity.all.search_by_location(params[:location])
+        @activities = Activity.all.search_by_location(params[:":location"])
     end
 
     def destroy

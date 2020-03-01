@@ -1,8 +1,11 @@
 TO DO
  1) dynamic route for locations
-        -set up location select from page
- 2) figure out how to do a top ten list
+        - X set up location select from page
+        - figure out how to grab activities by location to display on location page
+ 2) X figure out how to do a top ten list
+        ---- just did scope and list for 10 most recent
  3) enforce if_logged_in before_actions for necessary controller actions
+    ----before_actions working, flash notice not working when rerouting to home page
  4) clean up user journey- what makes sense, what looks good, what doesn't?
 
 New Notes:
