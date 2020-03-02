@@ -34,6 +34,7 @@ class ActivitiesController < ApplicationController
 
     def location
         @user = User.find(session[:user_id])
+        binding.pry
         @activities = Activity.all.search_by_location(params[:":location"])   
         if !@activities.empty?
         else 

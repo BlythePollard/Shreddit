@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
                 session[:user_id] = user.id
                 redirect_to user_path(user.id)
             else 
-                flash[:notice] = "no luck"
+                flash[:notice] = "Your username and password do not match- please try again." #this showing up when logging in via github if already logged in to github?
                 redirect_to '/sessions/new'
             end
         end
