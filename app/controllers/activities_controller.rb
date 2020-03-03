@@ -8,8 +8,14 @@ class ActivitiesController < ApplicationController
     def create
         @activity = Activity.create(activity_params)
         @user = User.find(session[:user_id])
-        @user.activities << @activity
-        redirect_to activities_path
+        if @activity.valid?
+        #put a validation for blank activities her
+            @user.activities << @activity
+            redirect_to activities_path
+        else 
+           render '/activities/new'
+            #refresh new page, display errors
+        end
     end
 
     def edit
@@ -34,7 +40,6 @@ class ActivitiesController < ApplicationController
 
     def location
         @user = User.find(session[:user_id])
-        binding.pry
         @activities = Activity.all.search_by_location(params[:":location"])   
         if !@activities.empty?
         else 
