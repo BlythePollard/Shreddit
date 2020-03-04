@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
     has_many :user_activities
     has_many :activities, through: :user_activities
-    has_many :votes
+    has_many :votes, through: :activities
 
     validates :name, presence: true
     validates :password, presence:true
@@ -17,7 +17,7 @@ class User < ApplicationRecord
         end
     end
 
-    
+
 end
 
 
