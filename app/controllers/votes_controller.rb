@@ -3,9 +3,9 @@ class VotesController < ApplicationController
 
     def create
         #how to modify this so that it goes through user & view does accordingly?
-        @a = @activity.votes.new(user_id: current_user.id)
-        @a.likes = 1
-        @a.save
+        activity_vote = @activity.votes.new(user_id: current_user.id)
+        activity_vote.likes = 1
+        activity_vote.save
         redirect_to activity_path(@activity)
     end
 

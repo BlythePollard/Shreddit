@@ -2,7 +2,8 @@
     <div class="notice"><%= flash[:notice] %></div>
   <% end %>
 
-<h1> Hello!</h1>
+<h1> Welcome, <%= @user.name %>!</h1>
+<p>You have <%= @user.votes.pluck(:likes).count%> likes</p>
 
 <p><%= link_to "Add an activity", new_activity_path %></p>
 
