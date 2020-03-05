@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
 
     def activities
-        @user = User.find(session[:user_id])
+        @user = current_user
         render '/users/activities'
     end
 

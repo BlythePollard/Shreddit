@@ -7,7 +7,7 @@ class ActivitiesController < ApplicationController
 
     def create
         @activity = Activity.create(activity_params)
-        @user = User.find(session[:user_id])
+        @user = current_user
         if @activity.valid?
             @user.activities << @activity
             redirect_to activities_path
@@ -33,7 +33,7 @@ class ActivitiesController < ApplicationController
 
     def index
         @activities = Activity.all
-        @user = User.find(session[:user_id])
+        @user = current_user
     end
 
     def location
@@ -52,7 +52,7 @@ class ActivitiesController < ApplicationController
     end
 
     def top_ten
-        @user = User.find(session[:user_id])
+        @user = current_user
         @activities = Activity.all
         render '/activities/top_ten'
     end
