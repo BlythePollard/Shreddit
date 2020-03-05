@@ -12,9 +12,9 @@ class SessionsController < ApplicationController
             redirect_to user_path(user.id)
         else 
             @user = User.find_by(name: params[:name])
-            if user && user.authenticate(params[:password])
-                session[:user_id] = user.id
-                redirect_to user_path(user.id)
+            if @user && @user.authenticate(params[:password])
+                session[:user_id] = @user.id
+                redirect_to user_path(@user.id)
             else 
                 flash[:notice] = "Your username and password do not match- please try again." #this showing up when logging in via github if already logged in to github?
                 redirect_to '/sessions/new'
