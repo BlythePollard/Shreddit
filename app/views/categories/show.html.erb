@@ -1,1 +1,4 @@
-iterate through categeories activities
+<h1><%= @category.name %> <h1>
+<% @category.activities.each do |activity| %>
+    <h4><%= activity.name %></h4>
+  <% end %>
