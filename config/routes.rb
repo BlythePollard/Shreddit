@@ -1,5 +1,7 @@
 Rails.application.routes.draw do    
 
+  resources :categories, only: [:show, :index]
+
   resources :users do 
     resources :activities
     resources :votes
@@ -10,7 +12,6 @@ Rails.application.routes.draw do
 
   resources :activities do
     resources :votes
-      #get ':location' => 'activities#location' something like this for location route?
   end
 
   resources :sessions 
@@ -27,10 +28,4 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
 
-  #order matters- make sure something else doesn't trump it
-  #parameterized routes
-
-  #this is routing to show rather than location--why?!
-
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
