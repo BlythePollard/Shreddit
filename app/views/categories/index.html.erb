@@ -1,0 +1,8 @@
+<% @categories.each do |category| %>
+  <h4><%= category.name %></h4>
+  <ul>
+    <% category.activities.each do |activity| %>
+      <li> <%= activity.name %> 
+    <% end %>
+  </ul>
+<% end %>
