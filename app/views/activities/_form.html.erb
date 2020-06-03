@@ -8,9 +8,9 @@
     <%= f.label :location, 'Activity Location' %>
     <%= f.select :location, options_for_select([["Select A Zone", ""], "Denver Metro", "Pikes Peak", "Boulder Valley", "Colorado Springs", "Long's Peak", "Northeast Colorado", "Morgan/Washington Bi-County", "East Central Colorado", "Southeast Colorado", "Arkansas Valley", "Southern Colorado", "San Luis Valley", "San Juan Basin", "Western Colorado", "Other"]), :class => 'genForm_dropBox' %>
 
-    <%= f.fields_for :categories do |cat| %>
-        <%= cat.label :category, 'Activity Category' %>
-        <%= cat.select :category, Category.all.collect { |p| p.name } %>
+    <%= f.fields_for :categories, @activity.category do |category| %>
+        <%= category.label :category, 'Activity Category' %>
+        <%= category.collection_select :category, Category.all, :id, :name, include_blank: false %>
     <%end%>
     <%= f.submit %>
     <%end%>

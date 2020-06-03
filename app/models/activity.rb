@@ -4,6 +4,7 @@ class Activity < ApplicationRecord
     has_many :votes
     belongs_to :category
     accepts_nested_attributes_for :category
+    #alias_attribute :categories, :category
 
     validates :name, presence: true
     validates :name, uniqueness: true

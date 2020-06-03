@@ -8,7 +8,8 @@ class ActivitiesController < ApplicationController
     def create
         @category = Category.find_by(name: category_params[:categories][:category])
         updated_params = activity_params.merge({category_id: @category.id})
-        @activity = current_user.activities.build(updated_params)
+        @activity = current_user.activities.build(activity_params)
+        
         if @activity.save
             redirect_to activities_path
         else 
@@ -62,13 +63,14 @@ class ActivitiesController < ApplicationController
     private
 
     def activity_params
-        params.require(:activity).permit(:name, :description, :location)
+        params.require(:activity).permit(:name, :description, :location, categories: [:category])
     end
 
-    def category_params
+  def category_params
         params.require(:activity).permit(categories: [:category])
     end
-
-    #private method: current_activity
     
 end
+
+
+#what's up with categories & how to get rid of it or get within nested value???
