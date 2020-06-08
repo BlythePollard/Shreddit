@@ -6,10 +6,10 @@ class ActivitiesController < ApplicationController
     end
 
     def create
-        @category = Category.find_by(name: category_params[:categories][:category])
-        updated_params = activity_params.merge({category_id: @category.id})
-        @activity = current_user.activities.build(updated_params)
-        if @activity.save
+        @activity = Activity.create(activity_params)
+        @user = current_user
+        if @activity.valid?
+            @user.activities << @activity
             redirect_to activities_path
         else 
            render '/activities/new'
@@ -22,11 +22,9 @@ class ActivitiesController < ApplicationController
 
     def update
         @activity = Activity.find(params[:id])
-        if @activity.update(activity_params) #this calls save
-            redirect_to activity_path(@activity)
-        else 
-            render '/activities/edit'
-        end    
+        @activity.update(activity_params)
+        @activity.save
+        redirect_to activity_path(@activity)
     end
 
     def show
@@ -40,7 +38,7 @@ class ActivitiesController < ApplicationController
 
     def location
         @user = current_user
-        @activities = Activity.all.search_by_location(params[":location"]) 
+        @activities = Activity.all.search_by_location(params[:":location"])   
         if !@activities.empty?
         else 
             flash[:notice] = "There are no activities in this location yet."
@@ -64,11 +62,5 @@ class ActivitiesController < ApplicationController
     def activity_params
         params.require(:activity).permit(:name, :description, :location)
     end
-
-    def category_params
-        params.require(:activity).permit(categories: [:category])
-    end
-
-    #private method: current_activity
     
 end
